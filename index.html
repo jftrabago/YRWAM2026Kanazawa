@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>YRWAM2026Kanazawa</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/main.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Avenir","Avenir Next";}
+body {font-size:16px; margin:0;}
+.myDesign-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer;}
+.myDesign-half img:hover{opacity:1;}
+
+/* Footer Styling */
+.myDesign-banner {
+    width: 100%;
+    height: 350px; /* Example: fixed height */
+    background-image: url('images/banner.jpg');
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat; 
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.myDesign-footer {
+    width: 100%;
+    height: 100px; /* Example: fixed height */
+    background-image: url('images/autumn.png');
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat; 
+    position: relative;
+}
+
+/* Overlay to make text more readable */
+.myDesign-banner::before {
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.4); /* semi-transparent black overlay */
+    z-index: 1;
+}
+
+/* Text on banner */
+.myDesign-banner h1 {
+    color: white;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin: 0;
+    font-size: 2.2em;
+}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="myDesign-sidebar myDesign-myColor myDesign-collapse myDesign-top myDesign-large myDesign-padding" style="z-index:3;width:130px;font-weight:normal;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="myDesign_close()" class="myDesign-button myDesign-hide-large myDesign-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="myDesign-bar-block">
+    <!-- <a href="#" onclick="myDesign_close()" class="myDesign-bar-item myDesign-button myDesign-hover-white">Home</a>  -->
+    <a href="#about" onclick="myDesign_close()" class="myDesign-bar-item myDesign-button myDesign-hover-white">About</a> 
+    <a href="#speakers" onclick="myDesign_close()" class="myDesign-bar-item myDesign-button myDesign-hover-white">Speakers</a> 
+    <a href="#schedule" onclick="myDesign_close()" class="myDesign-bar-item myDesign-button myDesign-hover-white">Schedule</a>
+    <a href="#abstracts" onclick="myDesign_close()" class="myDesign-bar-item myDesign-button myDesign-hover-white">Abstracts</a>
+    <a href="#venue" onclick="myDesign_close()" class="myDesign-bar-item myDesign-button myDesign-hover-white">Venue</a> 
+    <a href="#organizingcommittee" onclick="myDesign_close()" class="myDesign-bar-item myDesign-button myDesign-hover-white">Organizers</a> 
+    <!-- <a href="#acknowledgments" onclick="myDesign_close()" class="myDesign-bar-item myDesign-button myDesign-hover-white">Acknowledgments</a> -->
+	<a href="#contact" onclick="myDesign_close()" class="myDesign-bar-item myDesign-button myDesign-hover-white">Contact</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="myDesign-container myDesign-bottom myDesign-hide-large myDesign-myColor myDesign-xlarge myDesign-padding">
+  <a href="javascript:void(0)" class="myDesign-button myDesign-myColor myDesign-margin-right" onclick="myDesign_open()">☰</a>
+  <span><b>YRWAM2026</b></span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="myDesign-overlay myDesign-hide-large" onclick="myDesign_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Header/Banner -->
+<div class="myDesign-banner">
+  <h1 style="text-align: left; margin-left: 0px; margin-top:20px">
+	Welcome to <br>
+    <strong>Young Researchers Workshop on Applied Mathematics</strong><br>
+	&commat; The Kanazawa Theatre, Kanazawa City, Japan<br>
+	July 24 (Friday), 2026
+  </h1> 
+</div>
+
+  
+<!-- !PAGE CONTENT! -->
+<div class="myDesign-main" style="margin-left:200px;margin-right:200px">
+  
+
+  <!-- About Section -->
+  <div class="myDesign-container" id="about" style="margin-top:20px">
+    <h1 class="myDesign-text-myColor"><b>About</b></h1>
+	<p>
+	    <strong>Young Researchers Workshop on Applied Mathematics</strong>
+	    is a one-day workshop in Kanazawa, Japan, bringing together graduate students, young researchers, and experts working on a wide range of topics in applied mathematics. The workshop provides a forum for presenting and discussing recent advances in computational science, mathematical modeling, and related fields. The event aims to foster academic exchange, encourage collaboration, and support the development of early-career researchers.
+	</p>
+  </div>
+
+  
+  
+
+  
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= --> 
+  <!-- Photo grid (modal) -->
+  <!-- <div>
+    <div>
+      <img src="images/comfos2025.jpg" style="width:100%" alt="comfos2025">
+    </div>
+  </div> -->
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= --> 
+  
+  
+  
+  
+  
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= --> 
+  <!-- Important Dates -->
+  <!-- <div class="myDesign-container" id="importantdates" style="margin-top:20px">
+    <h1 class="myDesign-text-myColor"><b>Important Dates</b></h1>
+    <p>To be announced.</p>
+  </div> -->
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= -->
+  
+
+
+
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= --> 
+	<!-- Speakers -->
+	<div class="myDesign-container" id="speakers" style="margin-top:20px">
+	  <h1 class="myDesign-text-myColor"><b>Speakers</b></h1>
+	  <!-- <hr style="width:50px;border:5px solid red" class="myDesign-round"> -->
+	  <p><i>Titles ommited.</i></p>
+	  <p>
+		  <table class="myDesign-tableOrganizer">
+
+		      <tr> 
+		          <td align="right"><b>Shahadat ALI</b></td>
+		          <td align="left">Kanazawa University, Japan</td>
+		      </tr>
+
+		      <tr> 
+		          <td align="right"><b>Dalim HAQUE</b></td>
+		          <td align="left">Kanazawa University, Japan</td>
+		      </tr>
+
+		      <tr> 
+		          <td align="right"><b>Takehiro MATSUMOTO</b></td>
+		          <td align="left">Kanazawa University, Japan</td>
+		      </tr>
+
+		      <tr> 
+		          <td align="right"><b>Yuma NAKAMURA</b></td>
+		          <td align="left">Kanazawa University, Japan</td>
+		      </tr>
+
+		      <tr> 
+		          <td align="right"><b>Sahat Pandapotan NAINGGOLAN</b></td>
+		          <td align="left">Kanazawa University, Japan</td>
+		      </tr>
+
+		      <tr> 
+		          <td align="right"><b>Oussama OUNISSI</b></td>
+		          <td align="left">Kanazawa University, Japan</td>
+		      </tr>
+
+		      <tr> 
+		          <td align="right"><b>Petr PAUS</b></td>
+		          <td align="left">Czech Technical University in Prague, Czech Republic</td>
+		      </tr>
+
+		      <tr> 
+		          <td align="right"><b>Subham PRASAD</b></td>
+		          <td align="left">Indian Institute of Technology Mandi, India</td>
+		      </tr>
+
+		      <tr> 
+		          <td align="right"><b>Julius Fergy RABAGO</b></td>
+		          <td align="left">Kanazawa University, Japan</td>
+		      </tr>
+
+		      <tr> 
+		          <td align="right"><b>Student 1</b></td>
+		          <td align="left">Czech Technical University in Prague, Czech Republic</td>
+		      </tr>
+
+		      <tr> 
+		          <td align="right"><b>Student 2</b></td>
+		          <td align="left">Czech Technical University in Prague, Czech Republic</td>
+		      </tr>
+
+		      <tr> 
+		          <td align="right"><b>Student 3</b></td>
+		          <td align="left">Czech Technical University in Prague, Czech Republic</td>
+		      </tr>
+
+		      <tr> 
+		          <td align="right"><b>Student 4</b></td>
+		          <td align="left">Czech Technical University in Prague, Czech Republic</td>
+		      </tr>
+
+		      <tr> 
+		          <td align="right"><b>Student 5</b></td>
+		          <td align="left">Czech Technical University in Prague, Czech Republic</td>
+		      </tr>
+
+		  </table>
+		<!-- <i>More to follow.</i> -->
+	  </p>
+	</div>
+	<!-- ================================================================================= -->
+	<!-- ================================================================================= -->
+	<!-- ================================================================================= --> 
+
+
+
+	<!-- ================================================================================= -->
+	<!-- ================================================================================= -->
+	<!-- ================================================================================= -->
+
+	  <!-- Program -->
+	 <div class="myDesign-container" id="schedule" style="margin-top:20px; font-family: Avenir, sans-serif;">
+	    <h1 class="myDesign-text-myColor"><b>Schedule</b></h1>
+	    <!-- <a href=" " target="_blank">
+	      <button>Download Program as PDF (TBA)</button>
+	    </a> -->
+	    <!-- Day 1 Program --> 
+	    <!-- <h3>Schedule</h3> -->
+		<!-- <p><i>The following schedule is tentative.</i></p> -->
+	    <table border="1" cellspacing="0" cellpadding="5" style="width:75%; border-collapse: collapse;">
+	      <thead>
+	        <tr>
+	          <th>Time</th>
+	          <th>Title of Talk / Speaker / Affiliation</th>
+	        </tr>
+	      </thead>
+
+		  <tbody>
+		    <!-- Opening Remarks -->
+		    <tr style="background-color:#f0f0f0;">
+		      <td>13:00 - 13:05</td>
+		      <td><i>Opening Remarks</i><br><u>Organizer</u>, Affiliation, Country</td>
+		    </tr>
+
+		    <tr>
+		      <td>13:05 - 13:35</td>
+		      <td><i>Talk Title</i><br><u>Speaker 1-2</u>, Affiliation, Country</td>
+		    </tr>
+
+		    <tr>
+		      <td>13:35 - 13:50</td>
+		      <td><i>Talk Title</i><br><u>Speaker 3</u>, Affiliation, Country</td>
+		    </tr>
+
+		    <tr>
+		      <td>13:50 - 14:05</td>
+		      <td><i>Talk Title</i><br><u>Speaker 4</u>, Affiliation, Country</td>
+		    </tr>
+
+		    <tr>
+		      <td>14:05 - 14:20</td>
+		      <td><i>Talk Title</i><br><u>Speaker 5</u>, Affiliation, Country</td>
+		    </tr>
+
+		    <tr style="background-color:#f0f0f0;">
+		      <td>14:20 - 14:30</td>
+		      <td>Break</td>
+		    </tr>
+
+		    <tr>
+		      <td>14:30 - 15:00</td>
+		      <td><i>Talk Title</i><br><u>Speaker 6-7</u>, Affiliation, Country</td>
+		    </tr>
+
+		    <tr>
+		      <td>15:00 - 15:15</td>
+		      <td><i>Talk Title</i><br><u>Speaker 8</u>, Affiliation, Country</td>
+		    </tr>
+
+		    <tr>
+		      <td>15:15 - 15:30</td>
+		      <td><i>Talk Title</i><br><u>Speaker 9</u>, Affiliation, Country</td>
+		    </tr>
+
+		    <tr>
+		      <td>15:30 - 15:45</td>
+		      <td><i>Talk Title</i><br><u>Speaker 10</u>, Affiliation, Country</td>
+		    </tr>
+
+		    <tr style="background-color:#f0f0f0;">
+		      <td>15:45 - 15:55</td>
+		      <td>Break</td>
+		    </tr>
+
+		    <tr>
+		      <td>15:55 - 16:10</td>
+		      <td><i>Talk Title</i><br><u>Speaker 11</u>, Affiliation, Country</td>
+		    </tr>
+
+		    <tr>
+		      <td>16:10 - 16:25</td>
+		      <td><i>Talk Title</i><br><u>Speaker 12</u>, Affiliation, Country</td>
+		    </tr>
+
+		    <tr>
+		      <td>16:25 - 16:40</td>
+		      <td><i>Talk Title</i><br><u>Speaker 13</u>, Affiliation, Country</td>
+		    </tr>
+
+		    <tr>
+		      <td>16:40 - 16:55</td>
+		      <td><i>Talk Title</i><br><u>Speaker 14</u>, Affiliation, Country</td>
+		    </tr>
+
+		    <!-- Closing Remarks -->
+		    <tr style="background-color:#f0f0f0;">
+		      <td>16:55 - 17:00</td>
+		      <td><i>Closing Remarks</i><br><u>Organizer</u>, Affiliation, Country</td>
+		    </tr>
+		  </tbody>
+	    </table>
+	  </div>
+
+	<!-- ================================================================================= -->
+	<!-- ================================================================================= -->
+	<!-- ================================================================================= -->
+	
+
+
+
+
+ <!-- Print Button -->
+ <!-- <br> -->
+ <!-- <div style="text-align:left; margin-bottom:15px;">
+ 	<button onclick="saveScheduleAsPDF()">Download Program as PDF</button>
+ </div> -->
+
+
+
+  
+  
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= --> 
+  <div class="myDesign-container" id="abstracts" style="margin-top:20px">
+    <h1 class="myDesign-text-myColor"><b>Program &#38; Abstracts</b></h1>
+  	<a href="" target="_blank">
+	<!-- <a href=" " target="_blank"> -->
+    <button>Download Program &#38; Abstracts</button>
+  	</a>
+  </div>
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= -->
+  
+  
+  
+  
+  
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= --> 
+  <!-- Venue -->
+  <div class="myDesign-container" id="venue" style="margin-top:20px">
+    <h1 class="myDesign-text-myColor"><b>Venue</b></h1>
+    <!-- <hr style="width:50px;border:5px solid red" class="myDesign-round"> -->
+    <p>
+		<b>Place:</b>
+		<strong>The Kanazawa Theatre</strong>, Conference Rooms 6 and 7
+		<br>
+		<b>Address:</b> 
+		<a href="https://maps.app.goo.gl/PEa3BjvoEQZvdQNS7" target="_blank">6-27 Shimohondamachi, Kanazawa, Ishikawa 920-0993</a>
+	</p>	
+	<p>  
+		<img src="images/venue.jpg" alt="venue" style="width: 30%">
+		&emsp;
+		<img src="images/room.jpg" alt="room" style="width: 32%">
+		<!-- <br>
+		<br>
+		<img src="images/front.jpg" alt="venue" style="width: 63%"> -->
+    </p>
+  </div>
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= --> 
+  
+  
+ 
+ 
+
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= --> 
+  <!-- Registration -->
+  <!-- <div class="myDesign-container" id="registration" style="margin-top:20px">
+    <h1 class="myDesign-text-myColor"><b>Registration</b></h1>
+    <p>To be announced.</p>
+  </div> -->
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= -->
+
+  
+  
+  
+  
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= --> 
+  <!-- Organizing Committee-->
+  <div class="myDesign-container" id="organizingcommittee" style="margin-top:20px">
+    <h1 class="myDesign-text-myColor"><b>Organizers</b></h1>
+    <!-- <hr style="width:50px;border:5px solid red" class="myDesign-round"> -->
+    <p> 
+	      <table class="myDesign-tableOrganizer">
+	        <tr> 
+			  <td align="right"><b><a href="https://sites.google.com/site/masatowebe/" target="_blank">Masato KIMURA</a></b></td>
+	          <td align="left">Kanazawa University, Japan</td>
+	        </tr>
+
+	        <tr> 
+			  <td align="right"><b><a href="https://scheme.hn/" target="_blank">Hirofumi NOTSU</a></b></td>
+	          <td align="left">Kanazawa University, Japan</td>
+	        </tr>
+			
+	        <tr>
+	          <td align="right"><b><a href="https://jftrabago.github.io/" target="_blank">Julius Fergy RABAGO</a></b></td>
+	          <td align="left">Kanazawa University, Japan</td>
+	        </tr>
+			
+	        <tr> 
+	          <td align="right"><b><a href="https://sites.google.com/site/koyasakakibara/home" target="_blank">Koya SAKAKIBARA</a></b></td>
+	          <td align="left">Kanazawa University, Japan</td>
+	        </tr>
+	      </table>
+	</p>
+  </div>
+  
+
+
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= --> 
+  
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= --> 
+  <!-- ACKNOWLEDGMENTS -->
+  <div class="myDesign-container" id="acknowledgments" style="margin-top:20px">
+    <h1 class="myDesign-text-myColor"><b>Acknowledgments</b></h1>
+    <!-- <hr style="width:50px;border:5px solid red" class="myDesign-round"> -->
+    <p>
+	  <img src="images/JSPS.pdf" alt="JSPS" style="width: 30%">
+	  <br>
+	  <br>
+      <!-- <img src="images/JST.png" alt="JST" style="width: 30%"><br> -->
+	  <img src="images/ku.png" alt="KU" style="width: 30%">
+	  <!-- <img src="images/CREST.png" alt="CREST" style="width: 30%"> -->
+
+	</p>
+  </div>
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= --> 
+  
+  
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= --> 
+  <!-- Contact -->
+  <div class="myDesign-container" id="contact" style="margin-top:20px">
+    <h1 class="myDesign-text-myColor"><b>Contact</b></h1>
+    <!-- <hr style="width:50px;border:5px solid red" class="myDesign-round"> -->
+    <p>If you have any questions or requests, send an e-mail to notsu[at]se.kanazawa-u.ac.jp.</p>
+  </div>
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= -->
+  <!-- ================================================================================= --> 
+  
+  
+
+ 
+  
+<!-- End page content -->
+</div>
+
+
+
+
+
+
+
+
+<!-- MAIN.CSS Container -->
+<div class="myDesign-light-grey myDesign-container myDesign-padding-32" style="margin-top:20px;padding-right:58px"><p class="myDesign-right">&copy; <a href="#" title="MAIN.CSS" target="_blank" class="myDesign-hover-opacity">Workshop Organizers</a></p></div>
+
+<script>
+// Script to open and close sidebar
+function myDesign_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function myDesign_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script>
+async function saveScheduleAsPDF() {
+  const { jsPDF } = window.jspdf;
+  const schedule = document.getElementById("schedule");
+
+  // Capture the schedule content as a canvas
+  const canvas = await html2canvas(schedule, {
+    scale: 2,
+    useCORS: true
+  });
+
+  const pdf = new jsPDF('p', 'mm', 'a4');
+  const pageWidth = 210;  // A4 width in mm
+  const pageHeight = 297; // A4 height in mm
+
+  // Convert canvas size to mm scale for PDF
+  const canvasWidth = canvas.width;
+  const canvasHeight = canvas.height;
+
+  // Calculate scale to fit canvas into A4
+  const scaleX = pageWidth / canvasWidth;
+  const scaleY = pageHeight / canvasHeight;
+  const scale = Math.min(scaleX, scaleY);
+
+  const imgWidth = canvasWidth * scale;
+  const imgHeight = canvasHeight * scale;
+
+  const imgData = canvas.toDataURL('image/png');
+
+  // Center the image if needed
+  const xOffset = (pageWidth - imgWidth) / 2;
+  const yOffset = (pageHeight - imgHeight) / 2;
+
+  pdf.addImage(imgData, 'PNG', xOffset, yOffset, imgWidth, imgHeight);
+  pdf.save("Program.pdf");
+}
+</script>
+
+
+
+
+</body>
+</html>
