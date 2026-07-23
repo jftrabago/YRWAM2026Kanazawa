@@ -107,6 +107,37 @@ body {font-size:16px; margin:0;}
 <div class="myDesign-main" style="margin-left:200px;margin-right:200px">
   
 
+<p>
+    Last updated: <span id="jst-time"></span>
+</p>
+
+<script>
+function updateJST() {
+    const now = new Date();
+
+    const date = now.toLocaleDateString("en-US", {
+        timeZone: "Asia/Tokyo",
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    });
+
+    const time = now.toLocaleTimeString("en-GB", {
+        timeZone: "Asia/Tokyo",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+    });
+
+    document.getElementById("jst-time").textContent =
+        `${date} | ${time} JST`;
+}
+
+updateJST();
+setInterval(updateJST, 1000);
+</script>
+
   <!-- About Section -->
   <div class="myDesign-container" id="about" style="margin-top:20px">
     <h1 class="myDesign-text-myColor" style="width:80%"><b>About</b></h1>
