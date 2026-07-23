@@ -107,30 +107,41 @@ body {font-size:16px; margin:0;}
 <div class="myDesign-main" style="margin-left:200px;margin-right:200px">
   
 
-<p>
-    Last updated: <span id="jst-time"></span>
+
+<style>
+  p#lastModified {
+    color: blue;
+  }
+</style>
+
+<p id="lastModified">
+  Page last updated: <span id="lastModifiedDate"></span>
 </p>
 
 <script>
-const now = new Date();
+  function displayLastModified() {
+    const lastModified = new Date(document.lastModified);
 
-const date = now.toLocaleDateString("en-US", {
-    timeZone: "Asia/Tokyo",
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric"
-});
+    const date = lastModified.toLocaleDateString("en-US", {
+      timeZone: "Asia/Tokyo",
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
 
-const time = now.toLocaleTimeString("en-GB", {
-    timeZone: "Asia/Tokyo",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit"
-});
+    const time = lastModified.toLocaleTimeString("en-GB", {
+      timeZone: "Asia/Tokyo",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit"
+    });
 
-document.getElementById("jst-time").textContent =
-    `${date} | ${time} JST`;
+    document.getElementById("lastModifiedDate").textContent =
+      `${date} | ${time} JST`;
+  }
+
+  window.onload = displayLastModified;
 </script>
 
   <!-- About Section -->
